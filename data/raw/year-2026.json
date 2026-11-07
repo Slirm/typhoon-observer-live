@@ -313,5 +313,14 @@
     "StopTime": "2026-11-05 11:00",
     "TyphoonId": "202631",
     "Year": 2026
+  },
+  {
+    "CnName": "查帕卡",
+    "EnName": "Cempaka",
+    "IsStop": false,
+    "StartTime": "2026-11-07 11:00",
+    "StopTime": "2026-11-07 14:00",
+    "TyphoonId": "202632",
+    "Year": 2026
   }
 ]
