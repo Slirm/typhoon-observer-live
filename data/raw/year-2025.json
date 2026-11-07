@@ -1,0 +1,272 @@
+[
+  {
+    "CnName": "蝴蝶",
+    "EnName": "Wutip",
+    "IsStop": true,
+    "StartTime": "2025-06-10 08:00",
+    "StopTime": "2025-06-15 17:00",
+    "TyphoonId": "202501",
+    "Year": 2025
+  },
+  {
+    "CnName": "圣帕",
+    "EnName": "SEPAT",
+    "IsStop": true,
+    "StartTime": "2025-06-23 08:00",
+    "StopTime": "2025-06-24 20:00",
+    "TyphoonId": "202502",
+    "Year": 2025
+  },
+  {
+    "CnName": "热带低压",
+    "EnName": "TD",
+    "IsStop": true,
+    "StartTime": "2025-06-25 14:00",
+    "StopTime": "2025-06-26 20:00",
+    "TyphoonId": "20250301",
+    "Year": 2025
+  },
+  {
+    "CnName": "木恩",
+    "EnName": "Mun",
+    "IsStop": true,
+    "StartTime": "2025-07-03 02:00",
+    "StopTime": "2025-07-07 23:00",
+    "TyphoonId": "202503",
+    "Year": 2025
+  },
+  {
+    "CnName": "丹娜丝",
+    "EnName": "Danas",
+    "IsStop": true,
+    "StartTime": "2025-07-04 08:00",
+    "StopTime": "2025-07-08 23:00",
+    "TyphoonId": "202504",
+    "Year": 2025
+  },
+  {
+    "CnName": "热带低压",
+    "EnName": "TD",
+    "IsStop": true,
+    "StartTime": "2025-07-12 17:00",
+    "StopTime": "2025-07-14 05:00",
+    "TyphoonId": "20250501",
+    "Year": 2025
+  },
+  {
+    "CnName": "百合",
+    "EnName": "Nari",
+    "IsStop": true,
+    "StartTime": "2025-07-13 02:00",
+    "StopTime": "2025-07-15 05:00",
+    "TyphoonId": "202505",
+    "Year": 2025
+  },
+  {
+    "CnName": "韦帕",
+    "EnName": "Wipha",
+    "IsStop": true,
+    "StartTime": "2025-07-16 14:00",
+    "StopTime": "2025-07-22 14:00",
+    "TyphoonId": "202506",
+    "Year": 2025
+  },
+  {
+    "CnName": "范斯高",
+    "EnName": "FRANCISCO",
+    "IsStop": true,
+    "StartTime": "2025-07-22 17:00",
+    "StopTime": "2025-07-26 02:00",
+    "TyphoonId": "202507",
+    "Year": 2025
+  },
+  {
+    "CnName": "竹节草",
+    "EnName": "CO-MAY",
+    "IsStop": true,
+    "StartTime": "2025-07-23 14:00",
+    "StopTime": "2025-07-30 17:00",
+    "TyphoonId": "202508",
+    "Year": 2025
+  },
+  {
+    "CnName": "罗莎",
+    "EnName": "Krosa",
+    "IsStop": true,
+    "StartTime": "2025-07-24 11:00",
+    "StopTime": "2025-08-03 23:00",
+    "TyphoonId": "202509",
+    "Year": 2025
+  },
+  {
+    "CnName": "白鹿",
+    "EnName": "Bailu",
+    "IsStop": true,
+    "StartTime": "2025-08-03 08:00",
+    "StopTime": "2025-08-05 20:00",
+    "TyphoonId": "202510",
+    "Year": 2025
+  },
+  {
+    "CnName": "杨柳",
+    "EnName": "Podul",
+    "IsStop": true,
+    "StartTime": "2025-08-08 02:00",
+    "StopTime": "2025-08-15 02:00",
+    "TyphoonId": "202511",
+    "Year": 2025
+  },
+  {
+    "CnName": "热带低压",
+    "EnName": "TD",
+    "IsStop": true,
+    "StartTime": "2025-08-16 17:00",
+    "StopTime": "2025-08-19 14:00",
+    "TyphoonId": "20251201",
+    "Year": 2025
+  },
+  {
+    "CnName": "玲玲",
+    "EnName": "Lingling",
+    "IsStop": true,
+    "StartTime": "2025-08-18 11:00",
+    "StopTime": "2025-08-21 20:00",
+    "TyphoonId": "202512",
+    "Year": 2025
+  },
+  {
+    "CnName": "剑鱼",
+    "EnName": "Kajiki",
+    "IsStop": true,
+    "StartTime": "2025-08-22 08:00",
+    "StopTime": "2025-08-26 14:00",
+    "TyphoonId": "202513",
+    "Year": 2025
+  },
+  {
+    "CnName": "蓝湖",
+    "EnName": "NONGFA",
+    "IsStop": true,
+    "StartTime": "2025-08-28 14:00",
+    "StopTime": "2025-08-31 02:00",
+    "TyphoonId": "202514",
+    "Year": 2025
+  },
+  {
+    "CnName": "琵琶",
+    "EnName": "Peipah",
+    "IsStop": true,
+    "StartTime": "2025-09-02 20:00",
+    "StopTime": "2025-09-05 11:00",
+    "TyphoonId": "202515",
+    "Year": 2025
+  },
+  {
+    "CnName": "塔巴",
+    "EnName": "Tapah",
+    "IsStop": true,
+    "StartTime": "2025-09-05 20:00",
+    "StopTime": "2025-09-09 08:00",
+    "TyphoonId": "202516",
+    "Year": 2025
+  },
+  {
+    "CnName": "米娜",
+    "EnName": "MITAG",
+    "IsStop": true,
+    "StartTime": "2025-09-16 14:00",
+    "StopTime": "2025-09-20 05:00",
+    "TyphoonId": "202517",
+    "Year": 2025
+  },
+  {
+    "CnName": "桦加沙",
+    "EnName": "Ragasa",
+    "IsStop": true,
+    "StartTime": "2025-09-18 20:00",
+    "StopTime": "2025-09-25 17:00",
+    "TyphoonId": "202518",
+    "Year": 2025
+  },
+  {
+    "CnName": "浣熊",
+    "EnName": "Neoguri",
+    "IsStop": true,
+    "StartTime": "2025-09-18 20:00",
+    "StopTime": "2025-09-29 05:00",
+    "TyphoonId": "202519",
+    "Year": 2025
+  },
+  {
+    "CnName": "博罗依",
+    "EnName": "Bualoi",
+    "IsStop": true,
+    "StartTime": "2025-09-24 02:00",
+    "StopTime": "2025-09-29 20:00",
+    "TyphoonId": "202520",
+    "Year": 2025
+  },
+  {
+    "CnName": "麦德姆",
+    "EnName": "Matmo",
+    "IsStop": true,
+    "StartTime": "2025-10-01 11:00",
+    "StopTime": "2025-10-06 01:00",
+    "TyphoonId": "202521",
+    "Year": 2025
+  },
+  {
+    "CnName": "夏浪",
+    "EnName": "Halong",
+    "IsStop": true,
+    "StartTime": "2025-10-05 02:00",
+    "StopTime": "2025-10-10 17:00",
+    "TyphoonId": "202522",
+    "Year": 2025
+  },
+  {
+    "CnName": "娜基莉",
+    "EnName": "Nakri",
+    "IsStop": true,
+    "StartTime": "2025-10-08 14:00",
+    "StopTime": "2025-10-15 02:00",
+    "TyphoonId": "202523",
+    "Year": 2025
+  },
+  {
+    "CnName": "风神",
+    "EnName": "FENGSHEN",
+    "IsStop": true,
+    "StartTime": "2025-10-17 08:00",
+    "StopTime": "2025-10-23 08:00",
+    "TyphoonId": "202524",
+    "Year": 2025
+  },
+  {
+    "CnName": "海鸥",
+    "EnName": "Kalmaegi",
+    "IsStop": true,
+    "StartTime": "2025-11-01 20:00",
+    "StopTime": "2025-11-07 05:00",
+    "TyphoonId": "202525",
+    "Year": 2025
+  },
+  {
+    "CnName": "凤凰",
+    "EnName": "Fung-wong",
+    "IsStop": true,
+    "StartTime": "2025-11-06 02:00",
+    "StopTime": "2025-11-13 07:00",
+    "TyphoonId": "202526",
+    "Year": 2025
+  },
+  {
+    "CnName": "天琴",
+    "EnName": "Koto",
+    "IsStop": true,
+    "StartTime": "2025-11-24 08:00",
+    "StopTime": "2025-12-01 17:00",
+    "TyphoonId": "202527",
+    "Year": 2025
+  }
+]

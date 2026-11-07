@@ -1,0 +1,3 @@
+_site/
+data/*.tmp
+data/raw/*.tmp

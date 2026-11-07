@@ -1,0 +1,1041 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "name": "海南气象·南海天气台风路径系统",
+    "url": "https://www.scsweather.com/Home/Typhoon",
+    "base": "https://www.scsweather.com"
+  },
+  "fetchedAt": "2026-11-07T02:11:04.762Z",
+  "year": 2026,
+  "activeCount": 0,
+  "storms": [
+    {
+      "id": "202631",
+      "name": "烟花",
+      "english": "In-fa",
+      "ended": true,
+      "observations": [
+        {
+          "time": "2026-10-23T18:00:00.000Z",
+          "longitude": 166.7,
+          "latitude": 10.4,
+          "windPower": 8,
+          "windSpeed": 18,
+          "pressure": 1000,
+          "moveDirection": null,
+          "moveSpeed": null
+        },
+        {
+          "time": "2026-10-23T21:00:00.000Z",
+          "longitude": 166.4,
+          "latitude": 10.4,
+          "windPower": 8,
+          "windSpeed": 18,
+          "pressure": 1000,
+          "moveDirection": "西西北",
+          "moveSpeed": 7
+        },
+        {
+          "time": "2026-10-24T00:00:00.000Z",
+          "longitude": 166.1,
+          "latitude": 10.2,
+          "windPower": 8,
+          "windSpeed": 18,
+          "pressure": 1000,
+          "moveDirection": null,
+          "moveSpeed": null
+        },
+        {
+          "time": "2026-10-24T03:00:00.000Z",
+          "longitude": 166,
+          "latitude": 10.5,
+          "windPower": 8,
+          "windSpeed": 20,
+          "pressure": 995,
+          "moveDirection": null,
+          "moveSpeed": null
+        },
+        {
+          "time": "2026-10-24T06:00:00.000Z",
+          "longitude": 165.8,
+          "latitude": 10.5,
+          "windPower": 9,
+          "windSpeed": 23,
+          "pressure": 990,
+          "moveDirection": "北",
+          "moveSpeed": 7
+        },
+        {
+          "time": "2026-10-24T09:00:00.000Z",
+          "longitude": 165.7,
+          "latitude": 10.3,
+          "windPower": 9,
+          "windSpeed": 23,
+          "pressure": 990,
+          "moveDirection": "北西北",
+          "moveSpeed": 12
+        },
+        {
+          "time": "2026-10-24T12:00:00.000Z",
+          "longitude": 165.7,
+          "latitude": 10.3,
+          "windPower": 9,
+          "windSpeed": 23,
+          "pressure": 990,
+          "moveDirection": "北西北",
+          "moveSpeed": 13
+        },
+        {
+          "time": "2026-10-24T15:00:00.000Z",
+          "longitude": 165.6,
+          "latitude": 10.5,
+          "windPower": 9,
+          "windSpeed": 23,
+          "pressure": 990,
+          "moveDirection": "北西北",
+          "moveSpeed": 13
+        },
+        {
+          "time": "2026-10-24T18:00:00.000Z",
+          "longitude": 165.5,
+          "latitude": 10.8,
+          "windPower": 9,
+          "windSpeed": 23,
+          "pressure": 990,
+          "moveDirection": "北西北",
+          "moveSpeed": 15
+        },
+        {
+          "time": "2026-10-24T21:00:00.000Z",
+          "longitude": 165.4,
+          "latitude": 11.2,
+          "windPower": 10,
+          "windSpeed": 25,
+          "pressure": 985,
+          "moveDirection": "北西北",
+          "moveSpeed": 13
+        },
+        {
+          "time": "2026-10-25T00:00:00.000Z",
+          "longitude": 165.3,
+          "latitude": 11.8,
+          "windPower": 10,
+          "windSpeed": 25,
+          "pressure": 985,
+          "moveDirection": "北西北",
+          "moveSpeed": 12
+        },
+        {
+          "time": "2026-10-25T03:00:00.000Z",
+          "longitude": 165.1,
+          "latitude": 12.1,
+          "windPower": 10,
+          "windSpeed": 25,
+          "pressure": 985,
+          "moveDirection": "北西北",
+          "moveSpeed": 13
+        },
+        {
+          "time": "2026-10-25T06:00:00.000Z",
+          "longitude": 165,
+          "latitude": 12.2,
+          "windPower": 10,
+          "windSpeed": 25,
+          "pressure": 985,
+          "moveDirection": "北西北",
+          "moveSpeed": 14
+        },
+        {
+          "time": "2026-10-25T09:00:00.000Z",
+          "longitude": 164.9,
+          "latitude": 12.4,
+          "windPower": 10,
+          "windSpeed": 25,
+          "pressure": 985,
+          "moveDirection": "西北",
+          "moveSpeed": 17
+        },
+        {
+          "time": "2026-10-25T12:00:00.000Z",
+          "longitude": 164.6,
+          "latitude": 12.6,
+          "windPower": 11,
+          "windSpeed": 30,
+          "pressure": 980,
+          "moveDirection": "西北",
+          "moveSpeed": 17
+        },
+        {
+          "time": "2026-10-25T15:00:00.000Z",
+          "longitude": 164.4,
+          "latitude": 13.1,
+          "windPower": 11,
+          "windSpeed": 30,
+          "pressure": 980,
+          "moveDirection": "西西北",
+          "moveSpeed": 14
+        },
+        {
+          "time": "2026-10-25T18:00:00.000Z",
+          "longitude": 164.2,
+          "latitude": 13.4,
+          "windPower": 11,
+          "windSpeed": 30,
+          "pressure": 980,
+          "moveDirection": "西西北",
+          "moveSpeed": 12
+        },
+        {
+          "time": "2026-10-25T21:00:00.000Z",
+          "longitude": 163.9,
+          "latitude": 13.9,
+          "windPower": 11,
+          "windSpeed": 30,
+          "pressure": 980,
+          "moveDirection": "西西北",
+          "moveSpeed": 9
+        },
+        {
+          "time": "2026-10-26T00:00:00.000Z",
+          "longitude": 163.4,
+          "latitude": 14,
+          "windPower": 13,
+          "windSpeed": 38,
+          "pressure": 965,
+          "moveDirection": "西西北",
+          "moveSpeed": 7
+        },
+        {
+          "time": "2026-10-26T03:00:00.000Z",
+          "longitude": 163.2,
+          "latitude": 14,
+          "windPower": 14,
+          "windSpeed": 45,
+          "pressure": 950,
+          "moveDirection": null,
+          "moveSpeed": null
+        },
+        {
+          "time": "2026-10-26T06:00:00.000Z",
+          "longitude": 163,
+          "latitude": 14,
+          "windPower": 15,
+          "windSpeed": 48,
+          "pressure": 945,
+          "moveDirection": null,
+          "moveSpeed": null
+        },
+        {
+          "time": "2026-10-26T09:00:00.000Z",
+          "longitude": 162.9,
+          "latitude": 14.1,
+          "windPower": 16,
+          "windSpeed": 52,
+          "pressure": 935,
+          "moveDirection": null,
+          "moveSpeed": null
+        },
+        {
+          "time": "2026-10-26T12:00:00.000Z",
+          "longitude": 162.8,
+          "latitude": 14.1,
+          "windPower": 16,
+          "windSpeed": 52,
+          "pressure": 935,
+          "moveDirection": null,
+          "moveSpeed": null
+        },
+        {
+          "time": "2026-10-26T15:00:00.000Z",
+          "longitude": 162.6,
+          "latitude": 14.1,
+          "windPower": 15,
+          "windSpeed": 50,
+          "pressure": 940,
+          "moveDirection": "西",
+          "moveSpeed": 6
+        },
+        {
+          "time": "2026-10-26T18:00:00.000Z",
+          "longitude": 162.6,
+          "latitude": 14.2,
+          "windPower": 15,
+          "windSpeed": 50,
+          "pressure": 940,
+          "moveDirection": "西",
+          "moveSpeed": 7
+        },
+        {
+          "time": "2026-10-26T21:00:00.000Z",
+          "longitude": 162.5,
+          "latitude": 14.3,
+          "windPower": 16,
+          "windSpeed": 52,
+          "pressure": 935,
+          "moveDirection": "西",
+          "moveSpeed": 9
+        },
+        {
+          "time": "2026-10-27T00:00:00.000Z",
+          "longitude": 162.4,
+          "latitude": 14.3,
+          "windPower": 16,
+          "windSpeed": 52,
+          "pressure": 935,
+          "moveDirection": "西",
+          "moveSpeed": 9
+        },
+        {
+          "time": "2026-10-27T03:00:00.000Z",
+          "longitude": 162.3,
+          "latitude": 14.3,
+          "windPower": 15,
+          "windSpeed": 50,
+          "pressure": 940,
+          "moveDirection": "西",
+          "moveSpeed": 14
+        },
+        {
+          "time": "2026-10-27T06:00:00.000Z",
+          "longitude": 162.2,
+          "latitude": 14.5,
+          "windPower": 15,
+          "windSpeed": 50,
+          "pressure": 940,
+          "moveDirection": "西",
+          "moveSpeed": 13
+        },
+        {
+          "time": "2026-10-27T09:00:00.000Z",
+          "longitude": 161.8,
+          "latitude": 14.5,
+          "windPower": 15,
+          "windSpeed": 50,
+          "pressure": 940,
+          "moveDirection": "西西北",
+          "moveSpeed": 13
+        },
+        {
+          "time": "2026-10-27T12:00:00.000Z",
+          "longitude": 161.6,
+          "latitude": 14.5,
+          "windPower": 15,
+          "windSpeed": 50,
+          "pressure": 940,
+          "moveDirection": "西西北",
+          "moveSpeed": 17
+        },
+        {
+          "time": "2026-10-27T15:00:00.000Z",
+          "longitude": 161.4,
+          "latitude": 14.6,
+          "windPower": 16,
+          "windSpeed": 52,
+          "pressure": 935,
+          "moveDirection": "西西北",
+          "moveSpeed": 17
+        },
+        {
+          "time": "2026-10-27T18:00:00.000Z",
+          "longitude": 160.9,
+          "latitude": 14.6,
+          "windPower": 16,
+          "windSpeed": 55,
+          "pressure": 930,
+          "moveDirection": "西西北",
+          "moveSpeed": 20
+        },
+        {
+          "time": "2026-10-27T21:00:00.000Z",
+          "longitude": 160.4,
+          "latitude": 14.8,
+          "windPower": 17,
+          "windSpeed": 60,
+          "pressure": 920,
+          "moveDirection": "西",
+          "moveSpeed": 22
+        },
+        {
+          "time": "2026-10-28T00:00:00.000Z",
+          "longitude": 159.9,
+          "latitude": 14.9,
+          "windPower": 17,
+          "windSpeed": 60,
+          "pressure": 920,
+          "moveDirection": "西",
+          "moveSpeed": 23
+        },
+        {
+          "time": "2026-10-28T03:00:00.000Z",
+          "longitude": 159.5,
+          "latitude": 15,
+          "windPower": 17,
+          "windSpeed": 60,
+          "pressure": 920,
+          "moveDirection": "西",
+          "moveSpeed": 24
+        },
+        {
+          "time": "2026-10-28T06:00:00.000Z",
+          "longitude": 159,
+          "latitude": 15.1,
+          "windPower": 17,
+          "windSpeed": 60,
+          "pressure": 920,
+          "moveDirection": "西",
+          "moveSpeed": 25
+        },
+        {
+          "time": "2026-10-28T09:00:00.000Z",
+          "longitude": 158.4,
+          "latitude": 15.2,
+          "windPower": 17,
+          "windSpeed": 60,
+          "pressure": 920,
+          "moveDirection": "西",
+          "moveSpeed": 27
+        },
+        {
+          "time": "2026-10-28T12:00:00.000Z",
+          "longitude": 157.6,
+          "latitude": 15.3,
+          "windPower": 17,
+          "windSpeed": 60,
+          "pressure": 920,
+          "moveDirection": "西",
+          "moveSpeed": 27
+        },
+        {
+          "time": "2026-10-28T15:00:00.000Z",
+          "longitude": 157,
+          "latitude": 15.4,
+          "windPower": 16,
+          "windSpeed": 55,
+          "pressure": 930,
+          "moveDirection": "西",
+          "moveSpeed": 27
+        },
+        {
+          "time": "2026-10-28T18:00:00.000Z",
+          "longitude": 156.3,
+          "latitude": 15.6,
+          "windPower": 16,
+          "windSpeed": 52,
+          "pressure": 935,
+          "moveDirection": "西",
+          "moveSpeed": 26
+        },
+        {
+          "time": "2026-10-28T21:00:00.000Z",
+          "longitude": 155.7,
+          "latitude": 15.7,
+          "windPower": 16,
+          "windSpeed": 52,
+          "pressure": 935,
+          "moveDirection": "西",
+          "moveSpeed": 31
+        },
+        {
+          "time": "2026-10-29T00:00:00.000Z",
+          "longitude": 154.7,
+          "latitude": 16,
+          "windPower": 16,
+          "windSpeed": 52,
+          "pressure": 935,
+          "moveDirection": "西",
+          "moveSpeed": 30
+        },
+        {
+          "time": "2026-10-29T03:00:00.000Z",
+          "longitude": 154,
+          "latitude": 16.1,
+          "windPower": 16,
+          "windSpeed": 52,
+          "pressure": 935,
+          "moveDirection": "西",
+          "moveSpeed": 28
+        },
+        {
+          "time": "2026-10-29T06:00:00.000Z",
+          "longitude": 153.1,
+          "latitude": 16.3,
+          "windPower": 16,
+          "windSpeed": 52,
+          "pressure": 935,
+          "moveDirection": "西",
+          "moveSpeed": 31
+        },
+        {
+          "time": "2026-10-29T09:00:00.000Z",
+          "longitude": 152.2,
+          "latitude": 16.4,
+          "windPower": 17,
+          "windSpeed": 58,
+          "pressure": 925,
+          "moveDirection": "西西北",
+          "moveSpeed": 30
+        },
+        {
+          "time": "2026-10-29T12:00:00.000Z",
+          "longitude": 151.3,
+          "latitude": 16.6,
+          "windPower": 17,
+          "windSpeed": 60,
+          "pressure": 920,
+          "moveDirection": "西西北",
+          "moveSpeed": 27
+        },
+        {
+          "time": "2026-10-29T15:00:00.000Z",
+          "longitude": 150.3,
+          "latitude": 16.9,
+          "windPower": 17,
+          "windSpeed": 60,
+          "pressure": 920,
+          "moveDirection": "西西北",
+          "moveSpeed": 26
+        },
+        {
+          "time": "2026-10-29T18:00:00.000Z",
+          "longitude": 149.4,
+          "latitude": 17.2,
+          "windPower": 17,
+          "windSpeed": 60,
+          "pressure": 920,
+          "moveDirection": "西西北",
+          "moveSpeed": 20
+        },
+        {
+          "time": "2026-10-29T21:00:00.000Z",
+          "longitude": 148.8,
+          "latitude": 17.3,
+          "windPower": 17,
+          "windSpeed": 58,
+          "pressure": 925,
+          "moveDirection": "西西北",
+          "moveSpeed": 33
+        },
+        {
+          "time": "2026-10-30T00:00:00.000Z",
+          "longitude": 147.9,
+          "latitude": 17.7,
+          "windPower": 17,
+          "windSpeed": 58,
+          "pressure": 925,
+          "moveDirection": "西西北",
+          "moveSpeed": 33
+        },
+        {
+          "time": "2026-10-30T03:00:00.000Z",
+          "longitude": 147.1,
+          "latitude": 18.2,
+          "windPower": 17,
+          "windSpeed": 58,
+          "pressure": 925,
+          "moveDirection": "西西北",
+          "moveSpeed": 30
+        },
+        {
+          "time": "2026-10-30T06:00:00.000Z",
+          "longitude": 146.3,
+          "latitude": 18.6,
+          "windPower": 17,
+          "windSpeed": 58,
+          "pressure": 925,
+          "moveDirection": "西北",
+          "moveSpeed": 28
+        },
+        {
+          "time": "2026-10-30T09:00:00.000Z",
+          "longitude": 145.5,
+          "latitude": 19.1,
+          "windPower": 17,
+          "windSpeed": 58,
+          "pressure": 925,
+          "moveDirection": "西北",
+          "moveSpeed": 27
+        },
+        {
+          "time": "2026-10-30T12:00:00.000Z",
+          "longitude": 144.6,
+          "latitude": 19.7,
+          "windPower": 17,
+          "windSpeed": 58,
+          "pressure": 925,
+          "moveDirection": "西北",
+          "moveSpeed": 20
+        },
+        {
+          "time": "2026-10-30T15:00:00.000Z",
+          "longitude": 144,
+          "latitude": 20.1,
+          "windPower": 17,
+          "windSpeed": 58,
+          "pressure": 925,
+          "moveDirection": "北西北",
+          "moveSpeed": 18
+        },
+        {
+          "time": "2026-10-30T18:00:00.000Z",
+          "longitude": 143.6,
+          "latitude": 20.5,
+          "windPower": 17,
+          "windSpeed": 58,
+          "pressure": 925,
+          "moveDirection": "北西北",
+          "moveSpeed": 17
+        },
+        {
+          "time": "2026-10-30T21:00:00.000Z",
+          "longitude": 143.2,
+          "latitude": 20.9,
+          "windPower": 16,
+          "windSpeed": 55,
+          "pressure": 930,
+          "moveDirection": "北",
+          "moveSpeed": 15
+        },
+        {
+          "time": "2026-10-31T00:00:00.000Z",
+          "longitude": 142.9,
+          "latitude": 21.3,
+          "windPower": 16,
+          "windSpeed": 55,
+          "pressure": 930,
+          "moveDirection": "北东北",
+          "moveSpeed": 15
+        },
+        {
+          "time": "2026-10-31T03:00:00.000Z",
+          "longitude": 142.8,
+          "latitude": 21.7,
+          "windPower": 16,
+          "windSpeed": 55,
+          "pressure": 930,
+          "moveDirection": "北东北",
+          "moveSpeed": 14
+        },
+        {
+          "time": "2026-10-31T06:00:00.000Z",
+          "longitude": 142.9,
+          "latitude": 22.1,
+          "windPower": 16,
+          "windSpeed": 55,
+          "pressure": 930,
+          "moveDirection": "东北",
+          "moveSpeed": 13
+        },
+        {
+          "time": "2026-10-31T09:00:00.000Z",
+          "longitude": 143,
+          "latitude": 22.5,
+          "windPower": 16,
+          "windSpeed": 55,
+          "pressure": 930,
+          "moveDirection": "东东北",
+          "moveSpeed": 8
+        },
+        {
+          "time": "2026-10-31T12:00:00.000Z",
+          "longitude": 143.4,
+          "latitude": 22.7,
+          "windPower": 16,
+          "windSpeed": 55,
+          "pressure": 930,
+          "moveDirection": null,
+          "moveSpeed": null
+        },
+        {
+          "time": "2026-10-31T15:00:00.000Z",
+          "longitude": 143.6,
+          "latitude": 23,
+          "windPower": 16,
+          "windSpeed": 52,
+          "pressure": 935,
+          "moveDirection": null,
+          "moveSpeed": null
+        },
+        {
+          "time": "2026-10-31T18:00:00.000Z",
+          "longitude": 143.8,
+          "latitude": 23,
+          "windPower": 16,
+          "windSpeed": 52,
+          "pressure": 935,
+          "moveDirection": null,
+          "moveSpeed": null
+        },
+        {
+          "time": "2026-10-31T21:00:00.000Z",
+          "longitude": 144.1,
+          "latitude": 22.9,
+          "windPower": 15,
+          "windSpeed": 48,
+          "pressure": 945,
+          "moveDirection": null,
+          "moveSpeed": null
+        },
+        {
+          "time": "2026-11-01T00:00:00.000Z",
+          "longitude": 144.3,
+          "latitude": 22.8,
+          "windPower": 14,
+          "windSpeed": 45,
+          "pressure": 950,
+          "moveDirection": "西南",
+          "moveSpeed": 7
+        },
+        {
+          "time": "2026-11-01T03:00:00.000Z",
+          "longitude": 144.3,
+          "latitude": 22.7,
+          "windPower": 14,
+          "windSpeed": 45,
+          "pressure": 950,
+          "moveDirection": "西西南",
+          "moveSpeed": 9
+        },
+        {
+          "time": "2026-11-01T06:00:00.000Z",
+          "longitude": 144.1,
+          "latitude": 22.4,
+          "windPower": 14,
+          "windSpeed": 42,
+          "pressure": 955,
+          "moveDirection": "西",
+          "moveSpeed": 12
+        },
+        {
+          "time": "2026-11-01T09:00:00.000Z",
+          "longitude": 144,
+          "latitude": 22.4,
+          "windPower": 13,
+          "windSpeed": 40,
+          "pressure": 960,
+          "moveDirection": "西",
+          "moveSpeed": 17
+        },
+        {
+          "time": "2026-11-01T12:00:00.000Z",
+          "longitude": 143.8,
+          "latitude": 22,
+          "windPower": 13,
+          "windSpeed": 40,
+          "pressure": 960,
+          "moveDirection": "西",
+          "moveSpeed": 15
+        },
+        {
+          "time": "2026-11-01T15:00:00.000Z",
+          "longitude": 143.3,
+          "latitude": 22,
+          "windPower": 13,
+          "windSpeed": 38,
+          "pressure": 965,
+          "moveDirection": "西",
+          "moveSpeed": 18
+        },
+        {
+          "time": "2026-11-01T18:00:00.000Z",
+          "longitude": 142.9,
+          "latitude": 22,
+          "windPower": 13,
+          "windSpeed": 38,
+          "pressure": 965,
+          "moveDirection": "西西北",
+          "moveSpeed": 18
+        },
+        {
+          "time": "2026-11-01T21:00:00.000Z",
+          "longitude": 142.6,
+          "latitude": 22.1,
+          "windPower": 13,
+          "windSpeed": 38,
+          "pressure": 965,
+          "moveDirection": "西西北",
+          "moveSpeed": 15
+        },
+        {
+          "time": "2026-11-02T00:00:00.000Z",
+          "longitude": 142,
+          "latitude": 22.3,
+          "windPower": 12,
+          "windSpeed": 35,
+          "pressure": 970,
+          "moveDirection": "西西北",
+          "moveSpeed": 15
+        },
+        {
+          "time": "2026-11-02T03:00:00.000Z",
+          "longitude": 141.5,
+          "latitude": 22.4,
+          "windPower": 12,
+          "windSpeed": 35,
+          "pressure": 970,
+          "moveDirection": "西西北",
+          "moveSpeed": 13
+        },
+        {
+          "time": "2026-11-02T06:00:00.000Z",
+          "longitude": 141,
+          "latitude": 22.6,
+          "windPower": 12,
+          "windSpeed": 33,
+          "pressure": 975,
+          "moveDirection": "西西北",
+          "moveSpeed": 10
+        },
+        {
+          "time": "2026-11-02T09:00:00.000Z",
+          "longitude": 140.7,
+          "latitude": 22.7,
+          "windPower": 10,
+          "windSpeed": 28,
+          "pressure": 982,
+          "moveDirection": "西西北",
+          "moveSpeed": 11
+        },
+        {
+          "time": "2026-11-02T12:00:00.000Z",
+          "longitude": 140.3,
+          "latitude": 22.9,
+          "windPower": 10,
+          "windSpeed": 28,
+          "pressure": 982,
+          "moveDirection": "西西北",
+          "moveSpeed": 9
+        },
+        {
+          "time": "2026-11-02T15:00:00.000Z",
+          "longitude": 140,
+          "latitude": 23,
+          "windPower": 10,
+          "windSpeed": 28,
+          "pressure": 982,
+          "moveDirection": "西西北",
+          "moveSpeed": 6
+        },
+        {
+          "time": "2026-11-02T18:00:00.000Z",
+          "longitude": 139.8,
+          "latitude": 23.1,
+          "windPower": 10,
+          "windSpeed": 28,
+          "pressure": 982,
+          "moveDirection": "西",
+          "moveSpeed": 6
+        },
+        {
+          "time": "2026-11-02T21:00:00.000Z",
+          "longitude": 139.7,
+          "latitude": 23.1,
+          "windPower": 10,
+          "windSpeed": 28,
+          "pressure": 982,
+          "moveDirection": "西西北",
+          "moveSpeed": 7
+        },
+        {
+          "time": "2026-11-03T00:00:00.000Z",
+          "longitude": 139.4,
+          "latitude": 23.1,
+          "windPower": 10,
+          "windSpeed": 28,
+          "pressure": 982,
+          "moveDirection": "西北",
+          "moveSpeed": 6
+        },
+        {
+          "time": "2026-11-03T03:00:00.000Z",
+          "longitude": 139.2,
+          "latitude": 23.1,
+          "windPower": 10,
+          "windSpeed": 28,
+          "pressure": 982,
+          "moveDirection": "西北",
+          "moveSpeed": 7
+        },
+        {
+          "time": "2026-11-03T06:00:00.000Z",
+          "longitude": 139,
+          "latitude": 23.1,
+          "windPower": 10,
+          "windSpeed": 28,
+          "pressure": 982,
+          "moveDirection": "北西北",
+          "moveSpeed": 8
+        },
+        {
+          "time": "2026-11-03T09:00:00.000Z",
+          "longitude": 138.9,
+          "latitude": 23.3,
+          "windPower": 12,
+          "windSpeed": 33,
+          "pressure": 975,
+          "moveDirection": "北西北",
+          "moveSpeed": 7
+        },
+        {
+          "time": "2026-11-03T12:00:00.000Z",
+          "longitude": 138.8,
+          "latitude": 23.3,
+          "windPower": 12,
+          "windSpeed": 33,
+          "pressure": 975,
+          "moveDirection": "北西北",
+          "moveSpeed": 9
+        },
+        {
+          "time": "2026-11-03T15:00:00.000Z",
+          "longitude": 138.7,
+          "latitude": 23.5,
+          "windPower": 12,
+          "windSpeed": 33,
+          "pressure": 975,
+          "moveDirection": "北西北",
+          "moveSpeed": 10
+        },
+        {
+          "time": "2026-11-03T18:00:00.000Z",
+          "longitude": 138.6,
+          "latitude": 23.8,
+          "windPower": 12,
+          "windSpeed": 33,
+          "pressure": 975,
+          "moveDirection": "北西北",
+          "moveSpeed": 6
+        },
+        {
+          "time": "2026-11-03T21:00:00.000Z",
+          "longitude": 138.6,
+          "latitude": 24,
+          "windPower": 12,
+          "windSpeed": 33,
+          "pressure": 975,
+          "moveDirection": "北",
+          "moveSpeed": 13
+        },
+        {
+          "time": "2026-11-04T00:00:00.000Z",
+          "longitude": 138.5,
+          "latitude": 24.3,
+          "windPower": 13,
+          "windSpeed": 38,
+          "pressure": 965,
+          "moveDirection": "北",
+          "moveSpeed": 13
+        },
+        {
+          "time": "2026-11-04T03:00:00.000Z",
+          "longitude": 138.4,
+          "latitude": 24.6,
+          "windPower": 12,
+          "windSpeed": 35,
+          "pressure": 970,
+          "moveDirection": "北",
+          "moveSpeed": 16
+        },
+        {
+          "time": "2026-11-04T06:00:00.000Z",
+          "longitude": 138.5,
+          "latitude": 24.8,
+          "windPower": 12,
+          "windSpeed": 33,
+          "pressure": 975,
+          "moveDirection": "北",
+          "moveSpeed": 20
+        },
+        {
+          "time": "2026-11-04T09:00:00.000Z",
+          "longitude": 138.5,
+          "latitude": 25.3,
+          "windPower": 11,
+          "windSpeed": 30,
+          "pressure": 980,
+          "moveDirection": "北东北",
+          "moveSpeed": 20
+        },
+        {
+          "time": "2026-11-04T12:00:00.000Z",
+          "longitude": 138.5,
+          "latitude": 25.7,
+          "windPower": 11,
+          "windSpeed": 30,
+          "pressure": 980,
+          "moveDirection": "北东北",
+          "moveSpeed": 23
+        },
+        {
+          "time": "2026-11-04T15:00:00.000Z",
+          "longitude": 138.6,
+          "latitude": 26.3,
+          "windPower": 11,
+          "windSpeed": 30,
+          "pressure": 980,
+          "moveDirection": "北东北",
+          "moveSpeed": 32
+        },
+        {
+          "time": "2026-11-04T18:00:00.000Z",
+          "longitude": 138.7,
+          "latitude": 26.6,
+          "windPower": 11,
+          "windSpeed": 30,
+          "pressure": 980,
+          "moveDirection": "北东北",
+          "moveSpeed": 37
+        },
+        {
+          "time": "2026-11-04T21:00:00.000Z",
+          "longitude": 139,
+          "latitude": 27.6,
+          "windPower": 10,
+          "windSpeed": 28,
+          "pressure": 982,
+          "moveDirection": "东北",
+          "moveSpeed": 43
+        },
+        {
+          "time": "2026-11-05T00:00:00.000Z",
+          "longitude": 139.6,
+          "latitude": 28,
+          "windPower": 10,
+          "windSpeed": 28,
+          "pressure": 982,
+          "moveDirection": "东北",
+          "moveSpeed": 58
+        },
+        {
+          "time": "2026-11-05T03:00:00.000Z",
+          "longitude": 140.4,
+          "latitude": 28.8,
+          "windPower": 10,
+          "windSpeed": 28,
+          "pressure": 982,
+          "moveDirection": "东北",
+          "moveSpeed": 63
+        }
+      ],
+      "forecast": [
+        {
+          "time": "2026-11-05T15:00:00.000Z",
+          "longitude": 145.9,
+          "latitude": 33.7,
+          "windPower": 10,
+          "windSpeed": 25,
+          "pressure": 985,
+          "moveDirection": null,
+          "moveSpeed": null
+        }
+      ],
+      "forecastAgency": "中国",
+      "forecastIssuedAt": "2026-11-05T03:00:00.000Z"
+    }
+  ],
+  "bulletins": {
+    "status": "unknown",
+    "records": [],
+    "scope": "海南省来源最近5条公报，不是完整地区有效预警清单",
+    "sourceUrl": "https://www.scsweather.com/Home/Typhoon"
+  }
+}
