@@ -7,7 +7,10 @@
   <meta name="color-scheme" content="light">
   <title>台风观察 · 海南气象数据</title>
   <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./assets/vendor/leaflet/leaflet.css">
   <link rel="stylesheet" href="./styles.css">
+  <script src="./assets/vendor/leaflet/leaflet.js" defer></script>
+  <script src="./map.js" defer></script>
   <script src="./app.js" defer></script>
 </head>
 <body>
@@ -17,7 +20,7 @@
     <div class="nav-caption">沿海天气信息</div>
     <nav>
       <a class="nav-link active" href="#overview"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 3l9 7v10H3Z M9 20v-7h6v7"/></svg>台风概览</a>
-      <a class="nav-link" href="#track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3ZM9 3v15m6-12v15"/></svg>路径示意</a>
+      <a class="nav-link" href="#track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3ZM9 3v15m6-12v15"/></svg>台风路径</a>
       <a class="nav-link" href="#warnings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 10 18H2ZM12 9v5m0 3v1"/></svg>来源公报</a>
       <button class="nav-link" type="button" data-open-info><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-11v2"/></svg>数据说明</button>
     </nav>
@@ -45,9 +48,16 @@
       </section>
       <div class="detail-grid">
         <section class="map-panel" id="track" aria-labelledby="map-title" hidden>
-          <div class="panel-heading"><div><h2 id="map-title">台风路径示意</h2><p>实况轨迹与来源发布的预报批次</p></div><label class="forecast-toggle"><input id="forecast-toggle" type="checkbox"><span id="forecast-note">显示中国机构预报</span></label></div>
+          <div class="panel-heading"><div><h2 id="map-title">台风路径</h2><p>真实世界底图 · 实况轨迹与来源预报</p></div><label class="forecast-toggle"><input id="forecast-toggle" type="checkbox"><span id="forecast-note">显示中国机构预报</span></label></div>
           <div class="map-legend"><span><i class="legend-line observed"></i>实况路径</span><span><i class="legend-line forecast"></i>预报路径</span><span><i class="legend-center"></i>最新记录中心</span></div>
-          <div class="map-canvas"><svg id="track-map" viewBox="0 0 940 610" role="img" aria-labelledby="map-svg-title map-svg-desc"><title id="map-svg-title">来源台风路径示意</title><desc id="map-svg-desc">实线为来源已发布实况，虚线为同一中国机构批次预报；地理背景为简化示意，不用于导航。</desc><defs><pattern id="map-grid" width="125" height="122" patternUnits="userSpaceOnUse"><path d="M125 0H0V122" fill="none" class="map-grid-line"/></pattern></defs><rect width="940" height="610" class="map-ocean"/><rect width="940" height="610" fill="url(#map-grid)"/><g id="geography"></g><g id="map-labels"></g><g id="track-layer"></g></svg><span class="map-watermark">来源真实轨迹 · 底图简化示意</span><div class="map-compass" aria-hidden="true"><span>N</span>↑</div></div>
+          <div class="map-toolbar" role="group" aria-label="地图视图">
+            <button id="map-fit" type="button" title="查看完整路径与中国沿海">完整路径</button>
+            <button id="map-center" type="button" title="定位台风最新记录中心">定位中心</button>
+            <button id="map-world" type="button">世界视图</button>
+            <span class="map-toolbar-note">拖动地图探索</span>
+          </div>
+          <div class="map-canvas"><div id="track-map" role="region" aria-label="可交互台风路径地图" aria-describedby="map-status"></div><span class="map-north" aria-hidden="true">N ↑</span></div>
+          <div class="map-status-line"><span id="map-status" role="status">正在准备世界底图…</span><button id="map-retry" class="text-button" type="button" hidden>重试底图</button></div>
           <div class="node-detail" aria-live="polite"><div><span class="node-type" id="node-type">—</span><strong id="node-time">—</strong></div><p id="node-detail"></p></div>
           <div class="timeline" id="timeline" role="group" aria-label="选择来源路径时间节点"></div>
           <p class="map-footnote" id="map-footnote">实况和预报以来源标记为准。</p>
@@ -69,7 +79,7 @@
       <footer class="footer"><span>台风观察 <span class="footer-divider">/</span> 来源：海南气象 · 南海天气</span><span>非官方整理展示 · 计划每15分钟同步</span></footer>
     </main>
   </div>
-  <dialog id="data-dialog" aria-labelledby="dialog-title"><div class="dialog-heading"><h2 id="dialog-title">关于数据来源</h2><button class="icon-button" id="close-dialog" type="button" aria-label="关闭数据说明">×</button></div><span class="demo-label">来源数据 · 非官方站点</span><p>台风清单、实况及预报取自海南气象“南海天气”台风路径页面所用的公开网页接口。本站为独立整理展示，不代表来源机构；该接口没有稳定开放 API 的服务承诺。</p><p>GitHub Actions 计划每15分钟获取并保存数据，调度和部署可能延迟。超过45分钟未成功同步时提示过期；活跃台风实况时次超过12小时时额外提示核实。停止编号记录只作为历史资料。</p><p>“刷新快照”仅读取本站已保存的数据，不直接请求来源。来源最近5条预警公报不构成完整地区有效预警清单，空列表不代表无预警；请到官方原站阅读完整公报、防御指南及解除信息。</p><p>路径使用真实来源坐标，地理背景为简化示意，不用于导航或精确距离判断。重要天气决策请使用当地官方渠道。</p><p><a href="https://www.scsweather.com/Home/Typhoon" target="_blank" rel="noopener noreferrer">打开海南气象·南海天气台风系统 ↗</a></p><button class="button primary dialog-confirm" id="confirm-dialog" type="button">我已了解</button></dialog>
+  <dialog id="data-dialog" aria-labelledby="dialog-title"><div class="dialog-heading"><h2 id="dialog-title">关于数据来源</h2><button class="icon-button" id="close-dialog" type="button" aria-label="关闭数据说明">×</button></div><span class="demo-label">来源数据 · 非官方站点</span><p>台风清单、实况及预报取自海南气象“南海天气”台风路径页面所用的公开网页接口。本站为独立整理展示，不代表来源机构；该接口没有稳定开放 API 的服务承诺。</p><p>GitHub Actions 计划每15分钟获取并保存数据，调度和部署可能延迟。超过45分钟未成功同步时提示过期；活跃台风实况时次超过12小时时额外提示核实。停止编号记录只作为历史资料。</p><p>“刷新快照”仅读取本站已保存的数据，不直接请求来源。来源最近5条预警公报不构成完整地区有效预警清单，空列表不代表无预警；请到官方原站阅读完整公报、防御指南及解除信息。</p><p>路径使用真实来源坐标，底图采用 Natural Earth 1:50m 世界陆地与海岸线，使用 Web Mercator 投影。底图为自然地理参考，不绘制行政边界，不用于导航或精确距离判断。重要天气决策请使用当地官方渠道。</p><p><a href="https://www.scsweather.com/Home/Typhoon" target="_blank" rel="noopener noreferrer">打开海南气象·南海天气台风系统 ↗</a></p><button class="button primary dialog-confirm" id="confirm-dialog" type="button">我已了解</button></dialog>
   <noscript><p class="noscript-message">启用 JavaScript 后可读取来源数据快照。也可直接访问海南气象·南海天气官方台风系统查询。</p></noscript>
 </body>
 </html>

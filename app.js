@@ -1,53 +1,16 @@
 "use strict";
 
 const $ = (id) => document.getElementById(id);
-const svgNS = 'http://www.w3.org/2000/svg';
 const dateFormat = new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false});
 let snapshot = null;
 let health = null;
 let snapshotReadFailed = false;
 let selectedPoint = 0;
-let extent = {west:104,east:135,south:12,north:36};
+let mapView = null;
 
 function displayTime(time) { return time ? `${dateFormat.format(new Date(time))}（北京时）` : '未提供'; }
 function value(number) { return number===null || number===undefined ? '—' : String(number); }
 function currentStorm() { return snapshot?.storms.find((storm)=>storm.id===$('storm-select').value); }
-function project([longitude,latitude]) { return [(longitude-extent.west)/(extent.east-extent.west)*940,(extent.north-latitude)/(extent.north-extent.south)*610]; }
-function svgElement(tag,attributes={},text='') {
-  const element = document.createElementNS(svgNS,tag);
-  for (const [key,item] of Object.entries(attributes)) element.setAttribute(key,item);
-  if (text) element.textContent = text;
-  return element;
-}
-function pointString(points) { return points.map((point)=>project(point).join(',')).join(' '); }
-function coordinates(point) { return [point.longitude,point.latitude]; }
-
-function drawGeography() {
-  $('geography').replaceChildren();
-  $('map-labels').replaceChildren();
-  const shapes = [
-    [[104,36],[120,36],[120.8,35.2],[119.6,34.5],[120.5,33.2],[121.8,31.4],[121.4,30.8],[121.9,30.3],[121.3,29.5],[121.7,28.7],[120.8,27.9],[120.2,26.8],[119.3,26],[119.4,25.4],[118.3,24.5],[117.1,23.7],[115.7,22.9],[114.2,22.5],[113.6,22.2],[112.4,21.7],[111,21.5],[110.4,21.1],[110.3,20.4],[109.7,20.3],[109.7,21.4],[108.5,21.5],[107.4,21],[106.6,20],[105.7,19],[106.1,18],[107,16.6],[108.3,15.4],[109.1,13.2],[109,12],[104,12]],
-    [[108.6,19.9],[109.4,20.1],[110.6,20],[111,19.4],[110.5,18.7],[109.6,18.2],[108.7,18.5]],
-    [[121.5,25.3],[122,24.8],[121.8,23.9],[121.3,22.8],[120.8,21.9],[120.3,22.6],[120.2,23.5],[120.7,24.6]],
-    [[120.8,18.6],[121.8,18.4],[122.3,17.5],[122,16.2],[122.7,14.5],[121.7,13.7],[120.7,14.6],[119.8,15.8],[120.2,17.2]],
-    [[119.7,12],[120.4,13.4],[121.1,13.1],[121.5,12]]
-  ];
-  for (const shape of shapes) $('geography').append(svgElement('polygon',{points:pointString(shape),class:'land'}));
-  for (const [lon,lat,text,type] of [[111.5,30,'中国大陆',''],[122.2,24.7,'台湾岛',''],[108.8,17.7,'海南岛',''],[123.2,16.1,'菲律宾',''],[113.5,17,'南 海','sea'],[130.7,28.5,'西北太平洋','sea']]) {
-    const [x,y] = project([lon,lat]);
-    $('map-labels').append(svgElement('text',{x,y,class:`map-label ${type}`},text));
-  }
-  for (const [lon,lat,name] of [[114.1,22.5,'深圳'],[118.1,24.5,'厦门'],[122.1,30,'舟山'],[110.3,20,'海口']]) {
-    const [x,y] = project([lon,lat]);
-    $('map-labels').append(svgElement('circle',{cx:x,cy:y,r:4,class:'map-city'}),svgElement('text',{x:x-9,y:y-10,class:'map-label city','text-anchor':'end'},name));
-  }
-  const step = Math.ceil((extent.east-extent.west)/6/5)*5;
-  for (let lon=Math.ceil(extent.west/step)*step;lon<extent.east;lon+=step) {
-    const [x] = project([lon,extent.north]);
-    $('map-labels').append(svgElement('text',{x,y:22,class:'map-label coordinate','text-anchor':'middle'},`${lon}°E`));
-  }
-}
-
 function renderTrack() {
   const storm = currentStorm();
   if (!storm) return;
@@ -55,29 +18,15 @@ function renderTrack() {
   const showForecast = $('forecast-toggle').checked && !storm.ended;
   if (!showForecast && selectedPoint>last) selectedPoint=last;
   const points = [...storm.observations,...(showForecast?storm.forecast:[])];
-  const allCoordinates = points.map(coordinates);
-  extent = {west:Math.min(104,...allCoordinates.map(([lon])=>lon))-2,east:Math.max(135,...allCoordinates.map(([lon])=>lon))+3,south:Math.min(12,...allCoordinates.map(([,lat])=>lat))-2,north:Math.max(36,...allCoordinates.map(([,lat])=>lat))+3};
-  drawGeography();
-  const layer = $('track-layer');
-  layer.replaceChildren();
-  layer.append(svgElement('polyline',{points:pointString(storm.observations.map(coordinates)),class:'track-observed'}));
-  if (showForecast && storm.forecast.length) layer.append(svgElement('polyline',{points:pointString([coordinates(storm.observations[last]),...storm.forecast.map(coordinates)]),class:'track-forecast'}));
-  const [cx,cy] = project(coordinates(storm.observations[last]));
-  layer.append(svgElement('circle',{cx,cy,r:26,class:'center-halo'}));
-  const timelineIndices = [...storm.observations.map((_,index)=>index).slice(-3),...(showForecast?storm.forecast.slice(0,3).map((_,index)=>last+1+index):[])];
-  for (const index of timelineIndices) {
-    const [x,y] = project(coordinates(points[index]));
-    layer.append(svgElement('circle',{cx:x,cy:y,r:index===last?9:5,class:index===last?'center-dot':`track-point${index>last?' future':''}`}));
-    if (index===selectedPoint) layer.append(svgElement('circle',{cx:x,cy:y,r:index===last?16:11,class:'point-selected'}));
-  }
-  const callout = svgElement('g',{class:'map-callout',transform:`translate(${Math.max(8,Math.min(cx+18,754))},${Math.max(25,Math.min(cy+15,535))})`});
-  callout.append(svgElement('rect',{width:178,height:61,rx:6}),svgElement('text',{x:12,y:25},`${storm.name} · ${storm.ended?'最后实况':'最新中心'}`),svgElement('text',{x:12,y:45,class:'callout-sub'},`${value(storm.observations[last].windPower)}级 · ${storm.id}`));
-  layer.append(callout);
-  $('map-svg-title').textContent = `${storm.name}${storm.ended?'历史':''}路径示意，数据来自海南气象·南海天气`;
+  try {
+    if (!mapView) mapView=createTrackMap((index)=>{selectedPoint=index;renderTrack();});
+    mapView.render(storm,showForecast,selectedPoint);
+  } catch { $('map-status').textContent='地图暂不可用，请刷新页面重试；实况与时间节点仍可查看。'; }
   const point = points[selectedPoint];
   $('node-type').textContent = selectedPoint>last?'中国机构预报':selectedPoint===last?(storm.ended?'最后实况 · 历史':'最新实况'):'历史实况';
   $('node-time').textContent = displayTime(point.time);
   $('node-detail').textContent = `${point.latitude.toFixed(1)}°N，${point.longitude.toFixed(1)}°E · 最大风力${value(point.windPower)}级`;
+  const timelineIndices = [...storm.observations.map((_,index)=>index).slice(-3),...(showForecast?storm.forecast.slice(0,3).map((_,index)=>last+1+index):[])];
   $('timeline').replaceChildren();
   for (const index of timelineIndices) {
     const button=document.createElement('button');
@@ -91,7 +40,7 @@ function renderTrack() {
     button.addEventListener('click',()=>{selectedPoint=index;renderTrack();const target=[...$('timeline').children].find((item)=>item.getAttribute('aria-pressed')==='true');target?.focus({preventScroll:true});});
     $('timeline').append(button);
   }
-  $('map-footnote').textContent = storm.ended ? '本图为已停止编号台风的历史路径。下方提供最近3个实况节点；底图简化，不用于导航。' : `实况路径显示已发布记录；预报来自${storm.forecastAgency??'未提供'}，起报时间${displayTime(storm.forecastIssuedAt)}。底图为地理示意。`;
+  $('map-footnote').textContent = storm.ended ? '本图为已停止编号台风的历史路径。下方提供最近3个实况节点；底图采用真实世界海岸线，可拖动或缩放查看。' : `实况路径显示已发布记录；预报来自${storm.forecastAgency??'未提供'}，起报时间${displayTime(storm.forecastIssuedAt)}。底图为 Natural Earth 世界海岸线。`;
 }
 
 function intensity(wind) { return wind===null?'强度未提供':wind>=16?'超强台风':wind>=14?'强台风':wind>=12?'台风':wind>=10?'强热带风暴':wind>=8?'热带风暴':'热带低压'; }
@@ -182,5 +131,7 @@ document.querySelectorAll('nav a').forEach((link)=>link.addEventListener('click'
 setInterval(renderFreshness,60000);
 setInterval(()=>{if(!document.hidden)loadSnapshot();},15*60000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)renderFreshness();});
-drawGeography();
+$('map-fit').addEventListener('click',()=>mapView?.fitTrack());
+$('map-center').addEventListener('click',()=>mapView?.focusCenter());
+$('map-world').addEventListener('click',()=>mapView?.showWorld());
 loadSnapshot();

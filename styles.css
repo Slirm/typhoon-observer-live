@@ -103,29 +103,36 @@ h2 { font-size: 17px; font-weight: 650; }
 .legend-line { width: 22px; height: 0; border-top: 2px solid var(--blue); }
 .legend-line.forecast { border-top: 2px dashed var(--primary); }
 .legend-center { width: 9px; height: 9px; border: 2px solid var(--primary); border-radius: 50%; }
-.map-canvas { position: relative; overflow: hidden; background: var(--ocean); }
-#track-map { width: 100%; height: auto; max-height: 465px; }
-.map-ocean { fill: var(--ocean); }
-.map-grid-line { stroke: oklch(0.84 0.025 225); stroke-width: .7; }
-.land { fill: oklch(0.985 0.006 100); stroke: oklch(0.77 0.025 225); stroke-width: 1.4; stroke-linejoin: round; }
-.map-label { font-size: 18px; fill: oklch(0.42 0.035 225); font-family: inherit; }
-.map-label.sea { font-size: 21px; letter-spacing: 8px; fill: oklch(0.59 0.05 225); }
-.map-label.city { font-size: 14px; fill: oklch(0.38 0.025 225); }
-.map-label.coordinate { font-size: 12px; fill: oklch(0.46 0.035 225); }
-.map-city { fill: oklch(0.43 0.025 225); stroke: var(--surface); stroke-width: 2; }
-.track-observed { fill: none; stroke: var(--blue); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
-.track-forecast { fill: none; stroke: var(--primary); stroke-width: 3; stroke-dasharray: 8 7; stroke-linecap: round; }
-.track-point { fill: var(--surface); stroke: var(--blue); stroke-width: 2.3; }
-.track-point.future { stroke: var(--primary); }
-.point-selected { fill: none; stroke: var(--primary); stroke-width: 2; }
-.center-halo { fill: oklch(0.65 0.14 60 / .12); stroke: oklch(0.58 0.12 60 / .35); stroke-width: 1; }
-.center-dot { fill: var(--primary); stroke: var(--surface); stroke-width: 3; }
-.map-callout rect { fill: var(--surface); stroke: oklch(0.83 0.025 225); }
-.map-callout text { fill: var(--ink); font-size: 14px; font-family: inherit; }
-.map-callout .callout-sub { fill: var(--muted); font-size: 12px; }
-.map-watermark { position: absolute; bottom: 12px; left: 16px; color: oklch(0.39 0.035 225); font-size: 10px; }
-.map-compass { position: absolute; right: 19px; top: 17px; text-align: center; font-size: 26px; line-height: 1.2; color: var(--muted); }
-.map-compass span { display: block; font-size: 10px; }
+.map-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; padding: 0 23px 15px; }
+.map-toolbar button { min-height: 38px; border: 1px solid var(--line); border-radius: 6px; padding: 5px 12px; background: var(--surface); font-size: 12px; color: var(--ink); }
+.map-toolbar button:hover { background: var(--ocean); border-color: var(--blue); }
+.map-toolbar button:active { background: var(--bg); }
+.map-toolbar-note { margin-left: auto; font-size: 10px; color: var(--muted); }
+.map-canvas { position: relative; isolation: isolate; overflow: hidden; background: #dcecf0; border-block: 1px solid var(--line); }
+#track-map { width: 100%; height: 480px; background: #dcecf0; font-family: inherit; color: var(--ink); }
+#track-map:focus-visible { outline-offset: -3px; }
+.map-north { position: absolute; z-index: 800; left: 16px; top: 16px; pointer-events: none; color: #45616b; font-size: 12px; font-weight: 600; letter-spacing: 2px; }
+.map-status-line { display: flex; align-items: center; gap: 8px; padding: 10px 21px 0; min-height: 30px; color: var(--muted); font-size: 10px; }
+.map-status-line .text-button { min-height: 30px; padding: 2px 0; font-size: 11px; }
+.map-place { background: transparent; border: 0; pointer-events: none; white-space: nowrap; }
+.map-place span { display: block; width: max-content; transform: translate(-50%,-50%); color: #526c6e; font-size: 12px; text-shadow: 0 1px 2px #f4f6f1, 0 -1px 2px #f4f6f1; }
+.map-place.country span { font-size: 17px; font-weight: 600; letter-spacing: 3px; color: #536d65; }
+.map-place.island span { font-size: 11px; }
+.map-place.sea span { font-size: 15px; letter-spacing: 4px; color: #486d79; text-shadow: none; }
+.map-place.continent span { font-size: 12px; color: #4d6d72; }
+.map-place.city span { font-size: 10px; color: #465e61; transform: translate(6px,-50%); }
+.map-place.city::before { content: ''; display: block; position: absolute; width: 4px; height: 4px; background: #637f81; border-radius: 50%; transform: translate(-50%,-50%); }
+#track-map .leaflet-control-zoom { border: 1px solid #9ab5bc; border-radius: 7px; box-shadow: none; overflow: hidden; }
+#track-map .leaflet-control-zoom a { width: 38px; height: 38px; line-height: 38px; color: #365863; background: #fff; }
+#track-map .leaflet-control-zoom a:hover { background: #edf4f5; }
+#track-map .leaflet-control-attribution { font-size: 9px; padding: 3px 6px; background: rgb(255 255 255 / .9); color: #425f68; }
+#track-map .leaflet-control-attribution a { color: #315e6e; }
+#track-map .leaflet-control-scale-line { border-color: #5f7c85; color: #395a66; font-size: 10px; background: rgb(255 255 255 / .8); }
+#track-map .leaflet-tooltip { font-family: inherit; color: var(--ink); border: 0; box-shadow: 0 2px 6px rgb(27 56 64 / .15); }
+#track-map .storm-map-label { padding: 10px 13px; border-radius: 7px; background: #fff; }
+#track-map[data-world="true"] .storm-map-label { display: none; }
+.storm-map-label strong { display: block; font-size: 12px; font-weight: 650; }
+.storm-map-label span { display: block; color: var(--muted); font-size: 10px; margin-top: 3px; }
 .node-detail { padding: 15px 21px 0; display: flex; gap: 12px; justify-content: space-between; align-items: center; }
 .node-detail > div { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .node-type { color: var(--blue); background: var(--ocean); padding: 2px 7px; font-size: 10px; border-radius: 4px; }
@@ -271,10 +278,14 @@ dialog p { font-size: 14px; line-height: 1.9; margin-top: 17px; }
   .panel-heading p { font-size: 10px; }
   .forecast-toggle { font-size: 10px; min-height: 38px; }
   .map-legend { padding: 9px 15px 13px; gap: 14px; font-size: 9px; }
-  .map-canvas { min-height: 260px; }
-  #track-map { min-height: 260px; }
-  .map-watermark { font-size: 9px; left: 10px; bottom: 7px; }
-  .map-compass { right: 9px; top: 9px; font-size: 21px; }
+  #track-map { height: 420px; }
+  .map-toolbar { padding: 0 15px 13px; }
+  .map-toolbar button { min-height: 40px; font-size: 11px; padding-inline: 10px; }
+  .map-toolbar-note { display: none; }
+  .map-status-line { padding-inline: 15px; }
+  .map-place.country span { font-size: 14px; }
+  .map-place.sea span { font-size: 12px; letter-spacing: 2px; }
+  .map-place.continent span { font-size: 9px; }
   .node-detail { padding-inline: 15px; }
   .node-detail p { font-size: 10px; }
   .timeline { padding: 13px 15px 10px; gap: 6px; }

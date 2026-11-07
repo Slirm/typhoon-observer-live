@@ -46,7 +46,8 @@ jobs:
       - name: Prepare static website
         run: |
           mkdir -p _site/data
-          cp index.html styles.css app.js _site/
+          cp index.html styles.css app.js map.js _site/
+          cp -R assets _site/assets
           cp data/latest.json data/status.json _site/data/
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
