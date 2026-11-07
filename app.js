@@ -5,6 +5,7 @@ const svgNS = 'http://www.w3.org/2000/svg';
 const dateFormat = new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false});
 let snapshot = null;
 let health = null;
+let snapshotReadFailed = false;
 let selectedPoint = 0;
 let extent = {west:104,east:135,south:12,north:36};
 
@@ -133,7 +134,7 @@ function renderFreshness() {
   const lastSuccess=health?.lastSuccessAt??snapshot.fetchedAt;
   const age=Date.now()-new Date(lastSuccess).getTime();
   const activeStale=snapshot.storms.some((storm)=>!storm.ended && Date.now()-new Date(storm.observations.at(-1).time).getTime()>12*3600000);
-  const stale=age>45*60000||!health?.ok||activeStale;
+  const stale=snapshotReadFailed||age>45*60000||!health?.ok||activeStale;
   $('data-banner').classList.toggle('is-stale',stale);
   $('data-badge').textContent=stale?'数据需核实':snapshot.activeCount?'真实数据':'暂无活跃台风';
   $('data-message').textContent=stale?'同步异常或数据已过期，请核对官方来源。':snapshot.activeCount?`来源清单中有${snapshot.activeCount}个活跃台风。`:'来源清单当前没有活跃台风；下方展示最近结束台风的历史记录（如有）。';
@@ -154,6 +155,7 @@ async function loadSnapshot() {
     if (data.schemaVersion!==1 || !Array.isArray(data.storms) || !Number.isFinite(Date.parse(data.fetchedAt)) || data.storms.some((storm)=>!Array.isArray(storm.observations)||!storm.observations.length)) throw new Error('invalid snapshot');
     const previousId=$('storm-select').value;
     snapshot=data;
+    snapshotReadFailed=false;
     try {health=statusResponse.ok?await statusResponse.json():null;} catch {health=null;}
     $('storm-select').replaceChildren(...data.storms.map((storm)=>Object.assign(document.createElement('option'),{value:storm.id,textContent:`${storm.name} · ${storm.id}${storm.ended?'（历史）':''}`})));
     if (data.storms.some((storm)=>storm.id===previousId)) $('storm-select').value=previousId;
@@ -161,6 +163,7 @@ async function loadSnapshot() {
     renderStorm();renderBulletins();renderFreshness();
     $('refresh-status').textContent='已读取网站快照 · 未直接请求气象来源';
   } catch {
+    snapshotReadFailed=true;
     $('data-badge').textContent='读取失败';
     $('data-message').textContent=snapshot?'无法读取新快照，当前保留上次数据，请核对来源与时间。':'数据快照暂不可用。请稍后重试或前往官方原站查询。';
     $('data-banner').classList.add('is-stale');
