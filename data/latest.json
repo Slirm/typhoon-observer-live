@@ -5,7 +5,7 @@
     "url": "https://www.scsweather.com/Home/Typhoon",
     "base": "https://www.scsweather.com"
   },
-  "fetchedAt": "2026-11-08T14:28:57.633Z",
+  "fetchedAt": "2026-11-08T16:03:39.483Z",
   "year": 2026,
   "activeCount": 1,
   "storms": [
@@ -134,12 +134,22 @@
           "pressure": 975,
           "moveDirection": "西北",
           "moveSpeed": 16
+        },
+        {
+          "time": "2026-11-08T15:00:00.000Z",
+          "longitude": 136.1,
+          "latitude": 22.7,
+          "windPower": 12,
+          "windSpeed": 33,
+          "pressure": 975,
+          "moveDirection": "西北",
+          "moveSpeed": 14
         }
       ],
       "forecast": [
         {
-          "time": "2026-11-09T00:00:00.000Z",
-          "longitude": 135.1,
+          "time": "2026-11-09T03:00:00.000Z",
+          "longitude": 134.8,
           "latitude": 23.5,
           "windPower": 13,
           "windSpeed": 38,
@@ -148,9 +158,9 @@
           "moveSpeed": null
         },
         {
-          "time": "2026-11-09T12:00:00.000Z",
-          "longitude": 135.3,
-          "latitude": 24.2,
+          "time": "2026-11-09T15:00:00.000Z",
+          "longitude": 135.7,
+          "latitude": 24.3,
           "windPower": 14,
           "windSpeed": 45,
           "pressure": 950,
@@ -158,8 +168,8 @@
           "moveSpeed": null
         },
         {
-          "time": "2026-11-10T00:00:00.000Z",
-          "longitude": 137.5,
+          "time": "2026-11-10T03:00:00.000Z",
+          "longitude": 138.1,
           "latitude": 24.7,
           "windPower": 14,
           "windSpeed": 42,
@@ -168,9 +178,9 @@
           "moveSpeed": null
         },
         {
-          "time": "2026-11-10T12:00:00.000Z",
-          "longitude": 141.1,
-          "latitude": 25.2,
+          "time": "2026-11-10T15:00:00.000Z",
+          "longitude": 141.4,
+          "latitude": 25.3,
           "windPower": 13,
           "windSpeed": 38,
           "pressure": 965,
@@ -178,8 +188,8 @@
           "moveSpeed": null
         },
         {
-          "time": "2026-11-11T00:00:00.000Z",
-          "longitude": 144.7,
+          "time": "2026-11-11T03:00:00.000Z",
+          "longitude": 145.1,
           "latitude": 26.1,
           "windPower": 11,
           "windSpeed": 30,
@@ -188,28 +198,18 @@
           "moveSpeed": null
         },
         {
-          "time": "2026-11-11T12:00:00.000Z",
-          "longitude": 149,
-          "latitude": 26.6,
+          "time": "2026-11-11T15:00:00.000Z",
+          "longitude": 148.2,
+          "latitude": 26.3,
           "windPower": 8,
           "windSpeed": 20,
           "pressure": 995,
           "moveDirection": null,
           "moveSpeed": null
-        },
-        {
-          "time": "2026-11-12T12:00:00.000Z",
-          "longitude": 154.7,
-          "latitude": 26.1,
-          "windPower": 8,
-          "windSpeed": 18,
-          "pressure": 998,
-          "moveDirection": null,
-          "moveSpeed": null
         }
       ],
       "forecastAgency": "中国",
-      "forecastIssuedAt": "2026-11-08T12:00:00.000Z"
+      "forecastIssuedAt": "2026-11-08T15:00:00.000Z"
     }
   ],
   "bulletins": {
