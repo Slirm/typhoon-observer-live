@@ -13,6 +13,8 @@ $env:FLUTTER_STORAGE_BASE_URL='https://storage.flutter-io.cn'
 $env:PUB_HOSTED_URL='https://pub.flutter-io.cn'
 ```
 
+正式锁文件统一使用 `pub.dev`，CI 会严格校验。使用镜像时不要提交本机对锁文件包源地址的改写；准备发布时先移除 `PUB_HOSTED_URL` 覆盖，再运行 `flutter pub get`。
+
 ## 开发与检查
 
 ```powershell
