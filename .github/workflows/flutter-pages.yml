@@ -29,6 +29,8 @@ jobs:
           flutter-version: '3.47.9'
           channel: stable
       - run: flutter pub get --enforce-lockfile
+      - name: Test startup and resource budget
+        run: node --test test_web/*.test.mjs
       - run: flutter analyze
       - run: flutter test
       - name: Build approved Flutter website

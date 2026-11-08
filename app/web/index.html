@@ -9,12 +9,48 @@
   <meta name="color-scheme" content="light">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="manifest" href="manifest.json">
+  <link rel="preload" href="assets/assets/fonts/NotoSansSC-Regular.otf" as="fetch" type="font/otf" crossorigin>
   <title>台风观察 · 实况与路径</title>
-  <style>html,body{margin:0;background:#f5f7f8}#loading{position:fixed;inset:0;display:grid;place-content:center;font:16px system-ui,sans-serif;color:#236d85}#loading small{margin-top:12px;font-size:12px;color:#586e79}</style>
+  <style>html,body{margin:0;background:#f5f7f8}#loading{position:fixed;inset:0;display:grid;place-content:center;padding:24px;font:16px system-ui,sans-serif;color:#236d85}#loading small{max-width:28em;margin-top:12px;font-size:13px;line-height:1.7;color:#586e79}#startup-actions{margin-top:20px;font-size:14px}#startup-actions[hidden]{display:none}#startup-actions button{min-height:44px;padding:0 18px;margin-right:16px;border:0;border-radius:8px;background:#236d85;color:white;font:inherit;cursor:pointer}#startup-actions a{color:#236d85}</style>
 </head>
 <body>
-  <div id="loading" role="status">正在打开台风观察…<small>首次打开需要加载地图与中文字体</small></div>
-  <script>window.addEventListener('flutter-first-frame',()=>document.getElementById('loading')?.remove());</script>
-  <script src="flutter_bootstrap.js" async></script>
+  <div id="loading" role="status">
+    <div id="startup-status">正在加载台风观察…</div>
+    <small id="startup-detail">首次打开需要下载页面资源，请稍候。</small>
+    <div id="startup-actions" hidden><button type="button" onclick="location.reload()">重新加载</button><a href="https://www.scsweather.com/Home/Typhoon" target="_blank" rel="noopener noreferrer">查看官方台风信息</a></div>
+  </div>
+  <script id="startup">
+    const panel=document.getElementById('loading');
+    const status=document.getElementById('startup-status');
+    const detail=document.getElementById('startup-detail');
+    const actions=document.getElementById('startup-actions');
+    let ready=false,failed=false;
+    const slowTimer=setTimeout(()=>{
+      if(ready||failed)return;
+      detail.textContent='当前网络加载较慢，可以继续等待或重新加载。';
+      actions.hidden=false;
+    },15000);
+    window.typhoonStartup={
+      stage(message){if(!ready&&!failed)status.textContent=message;},
+      fail(){
+        if(ready)return;
+        failed=true;
+        clearTimeout(slowTimer);
+        status.textContent='页面加载失败';
+        detail.textContent='请检查网络后重试，也可以先查看官方台风信息。';
+        actions.hidden=false;
+      }
+    };
+    window.addEventListener('flutter-first-frame',()=>{
+      ready=true;
+      clearTimeout(slowTimer);
+      panel.remove();
+    },{once:true});
+    // The SDK resolves load() before its dynamically inserted entrypoint arrives.
+    window.addEventListener('error',(event)=>{
+      if(event.target?.tagName==='SCRIPT'||event.error)window.typhoonStartup.fail();
+    },true);
+  </script>
+  <script id="flutter-boot">{{flutter_bootstrap_js}}</script>
 </body>
 </html>
