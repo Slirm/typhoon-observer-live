@@ -1,4 +1,4 @@
-name: Sync typhoon data and deploy Pages
+name: Sync typhoon data
 
 on:
   schedule:
@@ -6,26 +6,23 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths-ignore:
-      - 'data/**'
-      - 'README.md'
+    paths:
+      - 'scripts/fetch-data.mjs'
+      - 'scripts/source.mjs'
+      - 'tests/**'
+      - '.github/workflows/update-and-deploy.yml'
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
-  group: typhoon-pages
+  group: typhoon-data
   cancel-in-progress: false
 
 jobs:
-  update-and-deploy:
+  sync:
     runs-on: ubuntu-latest
     timeout-minutes: 8
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v6
       - name: Test data normalization
@@ -41,23 +38,9 @@ jobs:
           git add data
           if ! git diff --cached --quiet; then
             git commit -m 'data: update Hainan typhoon snapshot'
+            git pull --rebase origin main
             git push origin HEAD:main
           fi
-      - name: Prepare static website
-        run: |
-          mkdir -p _site/data
-          cp index.html styles.css app.js map.js _site/
-          cp -R assets _site/assets
-          cp data/latest.json data/status.json _site/data/
-          touch _site/.nojekyll
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v4
-        with:
-          path: _site
-          retention-days: 1
-      - name: Deploy GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-      - name: Report collection failure after publishing retained snapshot
+      - name: Report collection failure after saving status
         if: steps.collect.outcome == 'failure'
         run: exit 1

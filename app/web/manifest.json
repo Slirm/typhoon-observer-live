@@ -1,0 +1,19 @@
+{
+  "name": "台风观察",
+  "short_name": "台风观察",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f5f7f8",
+  "theme_color": "#236d85",
+  "description": "台风实况与真实路径",
+  "orientation": "any",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

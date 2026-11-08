@@ -1,0 +1,33 @@
+name: typhoon_observer
+description: "台风观察：共用 Web 与 Android 的台风实况和路径应用。"
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_map: ^8.3.2
+  latlong2: ^0.9.1
+  http: ^1.6.0
+  shared_preferences: ^2.5.6
+  url_launcher: ^6.3.2
+  # Flutter adaptive controls also reference this icon font on mobile browsers.
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/maps/ne_50m_land.geojson
+    - assets/fonts/OFL.txt
+  fonts:
+    - family: NotoSansSC
+      fonts:
+        - asset: assets/fonts/NotoSansSC-Regular.otf
