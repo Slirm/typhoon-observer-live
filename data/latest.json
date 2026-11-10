@@ -5,7 +5,7 @@
     "url": "https://www.scsweather.com/Home/Typhoon",
     "base": "https://www.scsweather.com"
   },
-  "fetchedAt": "2026-11-09T15:59:46.028Z",
+  "fetchedAt": "2026-11-10T00:08:43.929Z",
   "year": 2026,
   "activeCount": 1,
   "storms": [
@@ -224,13 +224,33 @@
           "pressure": 960,
           "moveDirection": "东东北",
           "moveSpeed": 28
+        },
+        {
+          "time": "2026-11-09T18:00:00.000Z",
+          "longitude": 136.4,
+          "latitude": 24.7,
+          "windPower": 14,
+          "windSpeed": 42,
+          "pressure": 955,
+          "moveDirection": "东东北",
+          "moveSpeed": 32
+        },
+        {
+          "time": "2026-11-09T21:00:00.000Z",
+          "longitude": 137.1,
+          "latitude": 24.8,
+          "windPower": 14,
+          "windSpeed": 42,
+          "pressure": 955,
+          "moveDirection": "东东北",
+          "moveSpeed": 35
         }
       ],
       "forecast": [
         {
-          "time": "2026-11-10T03:00:00.000Z",
-          "longitude": 139,
-          "latitude": 25.3,
+          "time": "2026-11-10T09:00:00.000Z",
+          "longitude": 141,
+          "latitude": 25.9,
           "windPower": 13,
           "windSpeed": 38,
           "pressure": 965,
@@ -238,9 +258,9 @@
           "moveSpeed": null
         },
         {
-          "time": "2026-11-10T15:00:00.000Z",
-          "longitude": 143,
-          "latitude": 26.3,
+          "time": "2026-11-10T21:00:00.000Z",
+          "longitude": 145.7,
+          "latitude": 27.5,
           "windPower": 12,
           "windSpeed": 35,
           "pressure": 970,
@@ -248,28 +268,28 @@
           "moveSpeed": null
         },
         {
-          "time": "2026-11-11T03:00:00.000Z",
-          "longitude": 147.8,
-          "latitude": 27.9,
-          "windPower": 12,
-          "windSpeed": 33,
-          "pressure": 975,
+          "time": "2026-11-11T09:00:00.000Z",
+          "longitude": 151.4,
+          "latitude": 29.3,
+          "windPower": 11,
+          "windSpeed": 30,
+          "pressure": 980,
           "moveDirection": null,
           "moveSpeed": null
         },
         {
-          "time": "2026-11-11T15:00:00.000Z",
-          "longitude": 152.5,
-          "latitude": 28.6,
+          "time": "2026-11-11T21:00:00.000Z",
+          "longitude": 155.7,
+          "latitude": 29.4,
           "windPower": 10,
-          "windSpeed": 28,
-          "pressure": 982,
+          "windSpeed": 25,
+          "pressure": 985,
           "moveDirection": null,
           "moveSpeed": null
         }
       ],
       "forecastAgency": "中国",
-      "forecastIssuedAt": "2026-11-09T15:00:00.000Z"
+      "forecastIssuedAt": "2026-11-09T21:00:00.000Z"
     }
   ],
   "bulletins": {
