@@ -5,15 +5,15 @@
     "url": "https://www.scsweather.com/Home/Typhoon",
     "base": "https://www.scsweather.com"
   },
-  "fetchedAt": "2026-11-11T08:18:25.266Z",
+  "fetchedAt": "2026-11-11T16:18:59.887Z",
   "year": 2026,
-  "activeCount": 1,
+  "activeCount": 0,
   "storms": [
     {
       "id": "202632",
       "name": "查帕卡",
       "english": "Cempaka",
-      "ended": false,
+      "ended": true,
       "observations": [
         {
           "time": "2026-11-07T03:00:00.000Z",
@@ -354,13 +354,23 @@
           "pressure": 975,
           "moveDirection": "东东北",
           "moveSpeed": 45
+        },
+        {
+          "time": "2026-11-11T09:00:00.000Z",
+          "longitude": 151.4,
+          "latitude": 29.2,
+          "windPower": 12,
+          "windSpeed": 33,
+          "pressure": 975,
+          "moveDirection": "东东北",
+          "moveSpeed": 66
         }
       ],
       "forecast": [
         {
-          "time": "2026-11-11T18:00:00.000Z",
-          "longitude": 155.1,
-          "latitude": 30.4,
+          "time": "2026-11-11T21:00:00.000Z",
+          "longitude": 158.9,
+          "latitude": 32,
           "windPower": 10,
           "windSpeed": 28,
           "pressure": 982,
@@ -369,7 +379,7 @@
         }
       ],
       "forecastAgency": "中国",
-      "forecastIssuedAt": "2026-11-11T06:00:00.000Z"
+      "forecastIssuedAt": "2026-11-11T09:00:00.000Z"
     }
   ],
   "bulletins": {

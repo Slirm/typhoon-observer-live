@@ -317,9 +317,9 @@
   {
     "CnName": "查帕卡",
     "EnName": "Cempaka",
-    "IsStop": false,
+    "IsStop": true,
     "StartTime": "2026-11-07 11:00",
-    "StopTime": "2026-11-11 14:00",
+    "StopTime": "2026-11-11 17:00",
     "TyphoonId": "202632",
     "Year": 2026
   }
